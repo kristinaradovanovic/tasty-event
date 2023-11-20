@@ -1,0 +1,88 @@
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background-color: black;
+}
+
+.header {
+  background-color: black;
+}
+.pageTitle {
+  color: white;
+}
+.section {
+  background-image: url("../public/images/main-image\ 1.png");
+  height: 400px;
+  width: 100%;
+  background-size: cover;
+  margin-bottom: 50px;
+}
+.section-1 {
+  background-image: url("../public/images/food-category.png");
+  height: 300px;
+  width: 100%;
+  background-size: cover;
+  margin-bottom: 30px;
+}
+
+.section-2 {
+  background-image: url("../public/images/drinks-category.png");
+  height: 500px;
+  width: 100%;
+  background-size: cover;
+  margin-bottom: 50px;
+ 
+}
+
+.section-3 {
+  background-image: url("../public/images/workshop-category.png");
+  height: 500px;
+  width: 100%;
+  background-size: cover;
+  margin-bottom: 50px;
+}
+
+.btn {
+  background-color: rgba(255, 255, 0, 0.5);
+}
+
+.text-white {
+  margin-bottom: 50px;
+}
+
+.main-page {
+  background-color: black;
+}
+
+.text {
+  color: rgb(173, 173, 118);
+}
+
+.text-p {
+  color: rgb(244, 229, 211);
+}
+
+.event-image {
+  width: 300px;
+}
+
+.event-card {
+margin-bottom: 20px;
+background-color: black;
+color: whitesmoke;
+border-color: grey;
+padding: 10px;
+} 
