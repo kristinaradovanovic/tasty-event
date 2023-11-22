@@ -3,6 +3,7 @@ import axios from 'axios';
 import { Event } from '../types/Event';
 import { useParams } from 'react-router-dom';
 import { Button, Col, Row } from 'react-bootstrap';
+import { CartItem } from '../types/CartItem';
 
 const EventDetailed: React.FC = () => {
   const { id } = useParams<{ id: string }>();
@@ -18,6 +19,25 @@ const EventDetailed: React.FC = () => {
       });
   }, [id]);
 
+
+  const addToCart = async () => {
+    if (event) {
+      const newItem: CartItem = {
+        id: event.id,
+        title: event.title,
+        price: event.price,
+        quantity: 1,
+      };
+  
+      try {
+        await axios.post('http://localhost:3002/cart', newItem);
+        console.log('Item added to cart successfully!');
+      } catch (error) {
+        console.error('Error adding to cart:', error);
+      }
+    }
+  };
+
   return (
     <div>
       <Row>
@@ -32,7 +52,7 @@ const EventDetailed: React.FC = () => {
                 <p className='text-p'>{event.location}</p>
                 <p className='text-p'>{event.description}</p>
                 <p className='text-p'>Price: {event.price}$</p>
-                <Button>Add to Cart</Button>
+                <Button onClick={addToCart}>Add to Cart</Button>
               </>
             )}
         </Col>
@@ -43,18 +63,3 @@ const EventDetailed: React.FC = () => {
 };
 
 export default EventDetailed;
-    {/* <Container>
-      {event ? (
-        <div className="event-detailed">
-          <h2>{event.title}</h2>
-          <p>Description: {event.description}</p>
-          <p>Date: {event.date}</p>
-          <p>Time: {event.time}</p>
-          <p>Location: {event.location}</p>
-          <p>Price: {event.price}</p>
-          <img src={event.image} alt={event.title} />
-        </div>
-      ) : (
-        <p>Loading...</p>
-      )}
-    </Container> */}
