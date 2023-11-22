@@ -44,7 +44,6 @@ body {
   width: 100%;
   background-size: cover;
   margin-bottom: 50px;
- 
 }
 
 .section-3 {
@@ -86,3 +85,10 @@ color: whitesmoke;
 border-color: grey;
 padding: 10px;
 } 
+
+img.large {
+  max-width: 100%; 
+  width: 60%; 
+  height: auto;
+  margin-left: 100px;
+}

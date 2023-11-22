@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Event } from '../types/Event';
 import { useParams } from 'react-router-dom';
-import { Container } from 'react-bootstrap';
+import { Button, Col, Row } from 'react-bootstrap';
 
 const EventDetailed: React.FC = () => {
   const { id } = useParams<{ id: string }>();
@@ -19,7 +19,31 @@ const EventDetailed: React.FC = () => {
   }, [id]);
 
   return (
-    <Container>
+    <div>
+      <Row>
+        <Col md={6}>
+          <img src={event?.image} alt={event?.title} className="large"/>
+        </Col>
+        <Col md={6}>
+          {event && (
+              <>
+                <h2 className='text'>{event.title}</h2>
+                <p className='text-p'>{event.time}</p>
+                <p className='text-p'>{event.location}</p>
+                <p className='text-p'>{event.description}</p>
+                <p className='text-p'>Price: {event.price}$</p>
+                <Button>Add to Cart</Button>
+              </>
+            )}
+        </Col>
+      </Row>
+    
+    </div>
+  );
+};
+
+export default EventDetailed;
+    {/* <Container>
       {event ? (
         <div className="event-detailed">
           <h2>{event.title}</h2>
@@ -33,8 +57,4 @@ const EventDetailed: React.FC = () => {
       ) : (
         <p>Loading...</p>
       )}
-    </Container>
-  );
-};
-
-export default EventDetailed;
+    </Container> */}
