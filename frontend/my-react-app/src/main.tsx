@@ -11,12 +11,14 @@ import App from './App.tsx'
 import './index.css'
 import Home from './pages/Home.tsx';
 import EventCategory from './pages/EventCategory.tsx';
+import EventDetailed from './pages/EventDetailed.tsx';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<App />}>
         <Route index element={<Home/>}/>
-        <Route path="/events/:category" element={<EventCategory/>} /> 
+        <Route path="/events/:id" element={<EventDetailed />} />
+        <Route path="/category/:category" element={<EventCategory />} />
     </Route>
   )
 );

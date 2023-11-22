@@ -7,4 +7,5 @@ export type Event = {
     price: string;
     category: "food" | "drink" | "course";
     image: string;
+    id: string
 } 

@@ -22,7 +22,7 @@ const Home: React.FC = () => {
               <p className="text-p">
                 Explore a variety of food tasting events, ranging from exquisite wine tastings to flavorful food festivals. Join us in the celebration of culinary delights!
               </p>
-              <Link to="/events/food" className="btn btn-primary">See Events</Link>
+              <Link to="/category/food" className="btn btn-primary">See Events</Link>
             </div>
           </div>
         </Col>
@@ -34,7 +34,7 @@ const Home: React.FC = () => {
               <p className="text-p">
                 Indulge in the world of exquisite flavors and expert craftsmanship at our drink events. From the art of cocktail making to sophisticated wine tastings, immerse yourself in a sensory journey. Join us for delightful evenings filled with unique libations, expert insights, and the joy of raising a glass to unforgettable moments.
               </p>
-              <Link to="/events/drink" className="btn btn-primary">See Events</Link>
+              <Link to="/category/drink" className="btn btn-primary">See Events</Link>
             </div>
           </div>
         </Col>
@@ -46,7 +46,7 @@ const Home: React.FC = () => {
               <p className="text-p">
                 Unleash your culinary creativity in our hands-on food workshops. From mastering the art of cake making to crafting perfect pasta, our workshops offer a blend of expertise and fun. Join us for interactive sessions led by culinary experts, where you can hone your skills and create delicious masterpieces. Embark on a gastronomic adventure with our diverse food workshops.
               </p>
-              <Link to="/events/course" className="btn btn-primary">See Events</Link>
+              <Link to="/category/course" className="btn btn-primary">See Events</Link>
             </div>
           </div>
         </Col>

@@ -1,0 +1,6 @@
+{
+  "/events/:id": "/events/:id",
+  "/food": "/events?category=food",
+  "/drink": "/events?category=drink",
+  "/course": "/events?category=course"
+}

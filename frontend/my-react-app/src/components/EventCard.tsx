@@ -1,8 +1,9 @@
 import React from 'react';
 import { Event } from '../types/Event';
-import { Button, Card, Col, Row } from 'react-bootstrap';
+import { Card, Col, Row } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
-const EventCard: React.FC<Event> = ({ title, description, date, image, location }) => {
+const EventCard: React.FC<Event> = ({ title, description, date, image, location, id}) => {
   return (
     <Card className="event-card">
       <Row>
@@ -16,7 +17,7 @@ const EventCard: React.FC<Event> = ({ title, description, date, image, location 
         <Col md={4} xs={12}>
           <h3 className='text'>{title}</h3>
           <p>{description}</p>
-          <Button variant="primary">View Event</Button>
+          <Link to={`/events/${id}`} className="btn btn-primary">View Event</Link>
         </Col>
       </Row>
   </Card>

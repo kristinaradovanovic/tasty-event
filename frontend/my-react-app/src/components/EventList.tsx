@@ -8,9 +8,8 @@ const EventList: React.FC = () => {
     const [events, setEvents] = useState<Event[]>([]);
   
     useEffect(() => {
-      axios.get<Event[]>('http://localhost:3002/api/events')
+      axios.get<Event[]>('http://localhost:3002/events')
         .then(response => setEvents(response.data))
-        .catch(error => console.error('Error fetching events:', error));
     }, []);
   
     return (
