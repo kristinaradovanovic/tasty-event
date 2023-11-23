@@ -12,6 +12,7 @@ import './index.css'
 import Home from './pages/Home.tsx';
 import EventCategory from './pages/EventCategory.tsx';
 import EventDetailed from './pages/EventDetailed.tsx';
+import Cart from './pages/Cart.tsx';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -19,6 +20,7 @@ const router = createBrowserRouter(
         <Route index element={<Home/>}/>
         <Route path="/events/:id" element={<EventDetailed />} />
         <Route path="/category/:category" element={<EventCategory />} />
+        <Route path='/cart' element={<Cart/>} />
     </Route>
   )
 );

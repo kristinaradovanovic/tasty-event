@@ -15,7 +15,7 @@ function App() {
               </Navbar.Brand>
             </LinkContainer>
             <Nav>
-              <Link to="cart" className='nav-link text-p'>Cart</Link>
+              <Link to="/cart" className='nav-link text-p'>Cart</Link>
             </Nav>
           </Container>
         </Navbar>

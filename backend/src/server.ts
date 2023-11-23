@@ -30,6 +30,29 @@ app.post('/cart', async (req, res) => {
   }
 });
 
+app.put('/cart/:id', async (req, res) => {
+  const itemId = req.params.id;
+  const updatedQuantity = req.body.quantity;
+
+  try {
+    await axios.put(`${cartApi}/${itemId}`, { quantity: updatedQuantity });
+    res.json({ success: true });
+  } catch (error) {
+    console.error('Error updating quantity:', error);
+  }
+});
+
+app.delete('/cart/:id', async (req, res) => {
+  const itemId = req.params.id;
+
+  try {
+    await axios.delete(`${cartApi}/${itemId}`);
+    res.json({ success: true });
+  } catch (error) {
+    console.error('Error deleting item from cart:', error);
+  }
+});
+
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
 });

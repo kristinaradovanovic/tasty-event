@@ -20,23 +20,24 @@ const EventDetailed: React.FC = () => {
   }, [id]);
 
 
-  const addToCart = async () => {
-    if (event) {
-      const newItem: CartItem = {
-        id: event.id,
-        title: event.title,
-        price: event.price,
-        quantity: 1,
-      };
-  
-      try {
-        await axios.post('http://localhost:3002/cart', newItem);
-        console.log('Item added to cart successfully!');
-      } catch (error) {
-        console.error('Error adding to cart:', error);
+    const addToCart = async () => {
+      if (event) {
+        const newItem: CartItem = {
+          id: event.id,
+          title: event.title,
+          price: event.price,
+          quantity: 1,
+          image: event.image
+        };
+    
+        try {
+          await axios.post('http://localhost:3002/cart', newItem);
+          console.log('Item added to cart successfully!');
+        } catch (error) {
+          console.error('Error adding to cart:', error);
+        }
       }
-    }
-  };
+    };
 
   return (
     <div>
