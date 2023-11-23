@@ -93,13 +93,13 @@ img.large {
   margin-left: 100px;
 }
 
-.btn-delete {
-  margin-left: 100px;
-}
-
 .btn-cart {
   background-color: rgb(27, 39, 61);
   color: white;
+}
+
+.btn-buy{
+  background-color: green;
 }
 
 .card-class {

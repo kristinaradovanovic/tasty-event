@@ -85,26 +85,9 @@
     }
   ],
   "cart": [
-    {
-      "id": "1",
-      "title": "Wine Tasting Extravaganza",
-      "price": "$45 per person",
-      "quantity": 2,
-      "image": "../images/wine-1.jpg"
-    },
-    {
-      "id": "3",
-      "title": "Cake Making Workshop",
-      "price": "$50 per person",
-      "quantity": 1,
-      "image": "../images/cake-2.jpg"
-    },
-    {
-      "id": "5",
-      "title": "Gourmet Food Truck Rally",
-      "price": "Free admission (food prices vary)",
-      "quantity": 2,
-      "image": "../images/food-truck-1.jpg"
-    }
+  
+  ],
+  "tickets": [
+
   ]
 }

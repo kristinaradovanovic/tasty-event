@@ -9,6 +9,7 @@ app.use(cors());
 app.use(express.json()); 
 
 const cartApi = 'http://localhost:3002/cart';
+const ticketsApi = 'http://localhost:3002/tickets';
 
 app.get('/cart', async (req, res) => {
   try {
@@ -55,4 +56,23 @@ app.delete('/cart/:id', async (req, res) => {
 
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
+});
+
+app.get('/tickets', async (req, res) => {
+  try {
+    const response = await axios.get(ticketsApi);
+    res.json(response.data);
+  } catch (error) {
+    console.error('Error fetching ticket data:', error);
+  }
+});
+
+app.post('/tickets', async (req, res) => {
+  const newItem = req.body;
+  try {
+    await axios.post(ticketsApi, newItem);
+    res.json({ success: true });
+  } catch (error) {
+    console.error('Error bying ticket:', error);
+  }
 });

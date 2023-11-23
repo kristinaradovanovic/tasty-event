@@ -53,6 +53,22 @@ const Cart: React.FC = () => {
         }
       };
 
+      const buyTicket = async (index: number) => {
+        const boughtTicket = cartItems[index];
+    
+        try {
+          await axios.post('http://localhost:3002/tickets', boughtTicket);
+          
+          const updatedCart = [...cartItems];
+          updatedCart.splice(index, 1);
+          setCartItems(updatedCart);
+          
+          await axios.delete(`http://localhost:3002/cart/${boughtTicket.id}`);
+        } catch (error) {
+          console.error('Error buying ticket:', error);
+        }
+      };
+
     return(
         <Container>
             <h1>Events In Cart</h1>
@@ -70,6 +86,7 @@ const Cart: React.FC = () => {
                     <div className="card-body">
                         <Button className="btn btn-info btn-cart" onClick={() => handleIncrement(index)} >+</Button>
                         <Button className="btn btn-info btn-cart" onClick={() => handleDecrement(index)} >-</Button>
+                        <Button className="btn btn-success btn-buy" onClick={() => buyTicket(index)}>Buy</Button>
                         <Button className="btn btn-danger btn-cart btn-delete" onClick={() => handleDelete(index)}>Delete</Button>
                     </div>
                 </div>
